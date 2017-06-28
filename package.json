@@ -1,0 +1,7 @@
+{
+  "name": "login_demo",
+  "private": true,
+  "dependencies": {
+    "bulma": "^0.4.2"
+  }
+}
