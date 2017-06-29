@@ -1,7 +1,7 @@
 <div class="columns">
   <div class="column is-4 is-offset-4">
     <div class="box">
-      <%= form_for @user do |f| %>
+      <%= form_for :session do |f| %>
         <div class="field">
           <%= f.label :name, class: 'label' %>
 
@@ -15,14 +15,6 @@
 
           <div class="control">
             <%= f.password_field :password, class: 'input' %>
-          </div>
-        </div>
-
-        <div class="field">
-          <%= f.label :password_confirmation, class: 'label' %>
-
-          <div class="control">
-            <%= f.password_field :password_confirmation, class: 'input' %>
           </div>
         </div>
 
