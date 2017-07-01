@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :require_no_authentication, only: [:new, :create]
+
   def new
   end
 
@@ -16,5 +18,10 @@ class SessionsController < ApplicationController
   def destroy
     session.delete(:user_id) if session[:user_id]
     redirect_to root_path
+  end
+
+  private
+  def require_no_authentication
+    redirect_to root_path if current_user
   end
 end
