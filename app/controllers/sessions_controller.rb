@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
 
     if user and user.authenticate params[:session][:password]
       session[:user_id] = user.id
+      flash[:success] = '登入成功'
       redirect_to root_path
     else
       render 'new'

@@ -9,6 +9,7 @@ class PagesController < ApplicationController
 
   private
   def authenticate_user!
+    flash[:danger] = '請先登入！'
     redirect_to root_path unless current_user
   end
 end

@@ -15,6 +15,15 @@
 
     <section class="section">
       <div class="container">
+        <% if flash.any? %>
+          <% flash.each do |key, msg| %>
+            <div class="notification <%= 'is-' + key %>">
+              <button class="delete"></button>
+              <%= msg %>
+            </div>
+          <% end %>
+        <% end %>
+
         <%= yield %>
       </div>
     </section>
